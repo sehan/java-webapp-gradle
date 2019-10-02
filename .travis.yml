@@ -22,5 +22,8 @@ cache:
 #script:
 #  - mvn test -B
 
-after_script:
-  - docker build -t sehan/java-webapp-gradle .
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    branch: master

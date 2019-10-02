@@ -10,6 +10,7 @@ services:
 branches:
   only:
     - master
+    - /.*/
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -23,5 +24,3 @@ cache:
 deploy:
   provider: script
   script: bash docker_push
-  on:
-    branch: master

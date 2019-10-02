@@ -22,5 +22,11 @@ cache:
     - $HOME/.gradle/wrapper/
 
 deploy:
-  provider: script
-  script: bash docker_push
+  - provider: script
+    script: bash docker_push
+    on:
+      branch: master
+  - provider: script
+    script: bash docker_push_using_tag
+    on:
+      tags: true

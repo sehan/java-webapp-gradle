@@ -1,12 +1,5 @@
 #!/bin/bash
 
-if [ -z "$TRAVIS_TAG" ]
-then
-    docker build -t sehan/java-webapp-gradle:latest .
-    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    docker push sehan/java-webapp-gradle:latest
-else
-    docker build -t sehan/java-webapp-gradle:$TRAVIS_TAG .
-    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    docker push sehan/java-webapp-gradle:$TRAVIS_TAG
-fi
+docker build -t sehan/java-webapp-gradle:latest .
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push sehan/java-webapp-gradle:latest

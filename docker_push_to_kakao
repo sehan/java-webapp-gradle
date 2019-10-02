@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TAG=$1
+
+docker build -t idock.daumkakao.io/nio_d/java-webapp-gradle:$TAG .
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin idock.daumkakao.io
+docker push idock.daumkakao.io/nio_d/java-webapp-gradle:$TAG

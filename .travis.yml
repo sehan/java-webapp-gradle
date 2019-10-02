@@ -4,6 +4,9 @@ git:
   quiet: true
   submodules: false
 
+services:
+  - docker
+
 branches:
   only:
     - master
@@ -18,3 +21,6 @@ cache:
 
 #script:
 #  - mvn test -B
+
+after_script:
+  - docker build -t sehan/java-webapp-gradle .

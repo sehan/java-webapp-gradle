@@ -31,6 +31,6 @@ deploy:
     on:
       branch: develop
   - provider: script
-    script: bash docker_push_using_tag
+    script: bash docker_push $TRAVIS_TAG
     on:
       tags: true

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-docker build -t sehan/java-webapp-gradle:$TRAVIS_TAG .
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push sehan/java-webapp-gradle:$TRAVIS_TAG

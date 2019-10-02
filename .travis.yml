@@ -23,9 +23,13 @@ cache:
 
 deploy:
   - provider: script
-    script: bash docker_push
+    script: bash docker_push latest
     on:
       branch: master
+  - provider: script
+    script: bash docker_push nightly
+    on:
+      branch: develop
   - provider: script
     script: bash docker_push_using_tag
     on:

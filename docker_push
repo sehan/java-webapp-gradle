@@ -1,5 +1,7 @@
 #!/bin/bash
 
-docker build -t sehan/java-webapp-gradle:latest .
+TAG=$1
+
+docker build -t sehan/java-webapp-gradle:$TAG .
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-docker push sehan/java-webapp-gradle:latest
+docker push sehan/java-webapp-gradle:$TAG

@@ -2,3 +2,5 @@
 java webapp gradle ci 샘플 
 
 # nightly build
+
+for pr event
